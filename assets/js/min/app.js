@@ -1,0 +1,1 @@
+jQuery(function(){$(".images").owlCarousel({center:!0,items:2,loop:!0,margin:10,responsive:{600:{items:4}}})});

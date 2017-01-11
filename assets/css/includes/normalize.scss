@@ -1,0 +1,97 @@
+    $tablet-width: 768px;
+    $desktop-width: 1024px;
+    @mixin opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+    }
+    
+    .o9 {
+        @include opacity(0.9);
+    }
+    
+    .o8 {
+        @include opacity(0.8);
+    }
+    
+    .o7 {
+        @include opacity(0.7);
+    }
+    
+    .o6 {
+        @include opacity(0.6);
+    }
+    
+    .o5 {
+        @include opacity(0.5);
+    }
+    
+    .o4 {
+        @include opacity(0.4);
+    }
+    
+    .o3 {
+        @include opacity(0.3);
+    }
+    
+    .o2 {
+        @include opacity(0.2);
+    }
+    
+    .o1 {
+        @include opacity(0.1);
+    }
+    
+    @mixin phone {
+        @media (max-width: #{$tablet-width} - 1) {
+            @content;
+        }
+    }
+    
+    @mixin tablet {
+        @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+            @content;
+        }
+    }
+    
+    @mixin desktop {
+        @media (min-width: #{$desktop-width}) {
+            @content;
+        }
+    }
+    
+    @mixin clearfix {
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        box-sizing: inherit;
+    }
+    
+    textarea,
+    input {
+        outline: none;
+    }
+    
+    ::-webkit-input-placeholder {
+        color: #999;
+    }
+    
+    :-moz-placeholder {
+        color: #999;
+    }
+    
+    ::-moz-placeholder {
+        color: #999;
+    }
+    
+    :-ms-input-placeholder {
+        color: #999;
+    }

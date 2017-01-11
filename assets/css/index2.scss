@@ -1,0 +1,343 @@
+@import "includes/normalize";
+@import "typeplate/typeplate-index";
+@import "includes/open-iconic";
+@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Neuton:400,200,300,400italic,700,800);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.css);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display&text=%26);
+$primary: #de0e65;
+$secondary: #06626F;
+::selection {
+    background: #f3dce6;
+}
+
+::-moz-selection {
+    background: #f3dce6;
+}
+
+body {
+    font-family: 'Vollkorn', serif;
+    font-size: 8px;
+    @include phone {
+        font-size: 6px;
+    }
+}
+
+.amp {
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+h1 {
+    font-family: 'Neuton', sans-serif;
+    @extend .typl8-alpha;
+    margin-bottom: .5em;
+    color: #222;
+}
+
+h2 {
+    @extend .typl8-beta;
+    font-weight: lighter;
+    a {
+        color: $primary;
+        border-bottom: .1em solid #e0e0e0;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            border-color: #fff;
+        }
+    }
+    em {
+        color: #222;
+    }
+    .oi[data-glyph]:before {
+        display: inline;
+    }
+    @include phone {
+        line-height: 1.5em;
+    }
+    &.home {
+        a {
+            color: $secondary;
+        }
+    }
+}
+
+h2 + h4 {
+    margin: -1.5em 0 1em 0;
+}
+
+#four {
+    h2 + h4 {
+        margin-top: -2.5em;
+    }
+}
+
+h3 {
+    @extend .typl8-beta;
+}
+
+h4 {
+    font-weight: lighter;
+}
+
+hr {
+    border-top: 1px dashed #ccc;
+    border-bottom: 0;
+    margin-bottom: 4em;
+}
+
+a {
+    margin-bottom: 1em;
+    color: $primary;
+    line-height: 1em;
+    text-decoration: none;
+    border-bottom: .1em solid #e0e0e0;
+    &:hover {
+        border-color: #fff;
+    }
+}
+
+p {
+    text-align: center;
+    &.linebreak {
+        margin-bottom: 1em;
+    }
+}
+
+p,
+ul,
+ol {
+    @extend .typl8-gamma;
+    text-indent: 0 !important;
+    &.center {
+        text-align: center;
+    }
+}
+
+ul,
+ol {
+    line-height: 1.5em;
+    text-align: left;
+}
+
+sup {
+    border-bottom: 0;
+    a {
+        border-bottom: 0;
+    }
+}
+
+input {
+    width: 100%;
+    padding: 0 .5em;
+    border: 0;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    @extend .typl8-beta;
+    background: transparent;
+}
+
+textarea {
+    @extend input;
+    height: 10em;
+    padding-top: 0em;
+    line-height: 1.5em;
+    border: 0;
+    @extend .typl8-beta;
+}
+
+input:focus,
+textarea:focus {
+    opacity: 1;
+}
+
+button {
+    display: block;
+    margin-bottom: 0;
+    width: 10em;
+    margin: 0 auto;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    padding: .5em 0;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: .15em;
+    font-size: 4em !important;
+    @extend .typl8-beta;
+}
+
+.oi[data-glyph]:before {
+    font-size: .5em;
+    color: #ccc;
+}
+
+.base {
+    height: 100%;
+    width: 100%;
+    display: block;
+    .container {
+        max-width: 90em;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10% 20px;
+        .item {
+            padding-top: 4em;
+        }
+    }
+}
+
+header {
+    height: 10em;
+    margin: 0 auto;
+    text-align: center;
+    a {
+        border: 0;
+        display: block;
+        padding: 1em;
+        text-align: left;
+        img {
+            height: 10em;
+            border: 0;
+            display: block;
+            fill: $primary;
+        }
+        h1 {
+            top: 0;
+            display: block;
+            line-height: 2.5em;
+            padding-right: 0;
+            @extend .typl8-gamma;
+            color: #333;
+            right: 0;
+        }
+    }
+}
+
+.logo {
+    border: 0;
+    display: block;
+    width: 12em;
+    height: 12em;
+    background-size: cover;
+    margin: 0 auto 1em auto;
+    img {
+        border: 0;
+    }
+    svg {
+        display: block;
+        width: 100%;
+        fill: #e0e0e0;
+    }
+}
+
+.press {
+    display: inline-block;
+    margin: .5em;
+    padding: .5em 1em;
+    color: #444;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: .1em solid #eee;
+    &:hover {
+        background: #f9f9f9;
+        border-color: #f9f9f9
+    }
+}
+
+.footnotes {
+    font-size: 7px;
+    @include phone {
+        font-size: 6px;
+    }
+    @extend .typl8-zeta;
+    hr {
+        border-color: #eee;
+        border-style: solid;
+    }
+    ol {
+        color: #aaa
+    }
+}
+
+.images {
+    text-decoration: none;
+    border: none;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    &.split {
+        .owl-item {
+            padding: 0 5px;
+        }
+    }
+}
+
+.alllllllalone {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+footer {
+    width: 100%;
+    color: #aaa;
+    opacity: .2;
+    &.home {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    p {
+        @extend .typl8-epsilon;
+        span {
+            color: $primary;
+        }
+    }
+}
+
+.featherlight {
+    &:last-of-type {
+        background: RGBA(255, 255, 255, .85);
+    }
+    .featherlight-close-icon {
+        font-size: 16px;
+    }
+}
+
+#contactForm {
+    display: none;
+    &.featherlight-inner {
+        display: block;
+        h2 {
+            margin-bottom: 1.25em;
+        }
+        p {
+            line-height: 1.5em;
+            text-align: left;
+        }
+        .button {
+            @extend .typl8-delta;
+            display: inline-block;
+            background: #eee;
+            padding: 1em;
+            border: 0;
+            margin: 0 1em 0 0;
+            &:hover {
+                background: #f0f0f0;
+                color: #999;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
